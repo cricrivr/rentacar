@@ -1,0 +1,196 @@
+<app-nav></app-nav>
+<form class="form">
+
+  <span class="signup">Alquiler de vehiculo</span>
+
+  
+    <div class="separator">
+      <hr class="line">
+      <p>Alquiler de vehiculo</p>
+      <hr class="line">
+    </div>
+    <div class="input-group mb-3">
+      <input  id="alquiler" name="alquiler" [(ngModel)]="idalquiler" (keyup)="buscaridalquiler(idalquiler)" type="text" class="form-control" placeholder="Alquiler" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#modalAlquiler"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+
+    <div class="separator">
+      <hr class="line">
+      <p>Nombre de usuario</p>
+      <hr class="line">
+    </div>
+    <input id="nombre" name="nombre" [(ngModel)]="nombreUsuario" type="text" class="input" placeholder="Nombre" disabled>
+     <input id="file" type="file">
+  
+     <div class="separator">
+      <hr class="line">
+      <p>Fecha actual</p>
+      <hr class="line">
+    </div>
+     <input id="fecha_ini" name="fecha_ini" [(ngModel)]="formattedDate" type="text" class="input" placeholder="Fecha actual" disabled >
+
+     <div class="separator">
+      <hr class="line">
+      <p>Vehiculo / Precio</p>
+      <hr class="line">
+    </div>
+    <div class="grupo2">
+              <div class="input-group mb-3">
+          <input  id="vehiculoid" name="vehiculoid" [(ngModel)]="vehiculoid" type="text" class="form-control" placeholder="Vehiculo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#modalVehiculos"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+       <input id="precio" name="precio" [(ngModel)]="precio" type="text" class="input"  placeholder="Precio" disabled> <i class="fa-solid fa-dollar-sign"></i>
+    </div>
+    <textarea class="form-cont" aria-label="With textarea" disabled></textarea>
+
+        <div class="separator">
+          <hr class="line">
+          <p>Fecha inicio / Fecha final</p>
+          <hr class="line">
+        </div>
+       <div class="grupo">
+        <input id="fecha_ini" name="fecha_ini" type="date" class="input2" placeholder="Fecha inicial">
+        <input id="fecha_final" name="fecha_final" type="date" class="input2" placeholder="Fecha final">
+       </div>
+
+
+       <div class="separator">
+        <hr class="line">
+        <p>Dias en total</p>
+        <hr class="line">
+      </div>
+       <input id="dias" name="dias" [(ngModel)]="dias" type="text" class="input" placeholder="Dias totales" disabled>
+
+
+       <div class="separator">
+        <hr class="line">
+        <p>Monto total</p>
+        <hr class="line">
+      </div>
+  
+        <input id="total" name="total" [(ngModel)]="total" type="text" class="input" placeholder="Monto Total" disabled>
+  
+    
+        <div class="botones">
+        <button type="button" class="button" (click)="limpiar()">Limpiar</button>
+        <button type="button" routerLinkActive="router-link-active"  class="button" (click)="guardar()"> Guardar</button>
+      </div>   
+    </form>
+
+
+<!-- Modal alquiler -->
+<div class="modal fade bd-example-modal-sm"  id="modalAlquiler" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Rentas</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">nombre</th>             
+            <th scope="col">fecha</th>             
+            <th scope="col">vehiculo</th>             
+            <th scope="col">precio</th>             
+            <th scope="col">fechaIni</th>             
+            <th scope="col">fechaFinal</th>             
+            <th scope="col">estado</th>             
+            <th scope="col">entregado</th>             
+            <th scope="col">recibido</th>             
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let item of listadoAlquiler">
+            <th scope="row">
+              <a [routerLink]="" data-dismiss="modal">{{ item.idalquiler }}</a>
+            </th>
+            <td><a [routerLink]="" data-dismiss="modal" (click)="selectAlquiler(item)"> {{ item.nombre_usuario }} </a></td>
+            <td><a [routerLink]="" data-dismiss="modal" (click)="selectAlquiler(item)"> {{  item.fecha }}</a></td>
+            <td><a [routerLink]="" data-dismiss="modal" (click)="selectAlquiler(item)"> {{ item.idvehiculo }}</a></td>
+            <td><a [routerLink]="" data-dismiss="modal" (click)="selectAlquiler(item)"> {{  item.precio }}</a></td>
+            <td><a [routerLink]="" data-dismiss="modal" (click)="selectAlquiler(item)"> {{  item.fechaIni }}</a></td>
+            <td><a [routerLink]="" data-dismiss="modal" (click)="selectAlquiler(item)"> {{  item.fechaFinal }}</a></td>
+            <td><a [routerLink]="" data-dismiss="modal" (click)="selectAlquiler(item)"> {{ item.estado }}</a></td>
+            <td><a [routerLink]="" data-dismiss="modal" (click)="selectAlquiler(item)"> {{  item.entregado }}</a></td>
+            <td><a [routerLink]="" data-dismiss="modal" (click)="selectAlquiler(item)"> {{ item.recibido }}</a></td>
+            <td><a [routerLink]="" data-dismiss="modal" (click)="selectAlquiler(item)"> {{ item.total }}</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+      
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary p-2" data-dismiss="modal">Cancelar</button>        
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+    
+<!-- Modal vehiculos -->
+<div class="modal fade bd-example-modal-sm"  id="modalVehiculos" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Vehiculos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">marca</th>             
+              <th scope="col">modelo</th>             
+              <th scope="col">año</th>             
+              <th scope="col">color</th>             
+              <th scope="col">combustible</th>             
+              <th scope="col">placa</th>             
+              <th scope="col">pasajeros</th>             
+              <th scope="col">Precio</th>             
+              <th scope="col">estado</th>             
+            </tr>
+          </thead>
+          <tbody >
+            <tr *ngFor="let item of listadoVehiculos">
+              <th scope="row">
+                <a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.vehiculoid }}</a>
+              </th>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.marca }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.modelo }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.fecha }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.color }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.combustible }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.placa }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.pasajeros }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.precio }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.estado }}</a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary p-2" data-dismiss="modal">Cancelar</button>        
+      </div>
+    </div>
+  </div>
+</div>
+

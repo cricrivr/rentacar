@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
+.form {  
+    width: 79em;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2%;
+    border-radius: 20px;
+    padding: 20px 30px;
+    background-color: rgb(255, 255, 255);
+    transition: .2s linear;
+    text-align: center;
+    color: white;
+    align-items: center;
+  }
+  
+  .title {
+    color: black;
+    text-align: center;
+    font-size: 35px;
+    margin-top: 10%;
+    font-family: 'Bruno Ace', cursive;
+  }
+  .sub{
+    color: black;
+  }
+  .sub a {
+    color: rgb(23, 111, 211);
+  }
+  
+.form button {
+    align-self: flex-end;
+  }
+  
+  .input{
+    border: 0.5px solid rgb(22, 22, 22);
+    outline: none;
+    width: 50%;
+    padding: 10px 5px;
+    background-color: rgba(252, 250, 250, 0.274);
+    border-radius: 5px;
+    box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.015),100px 100px 80px rgba(0, 0, 0, 0.03);
+  }
+ 
+.button {
+  --bg: #0f0f0f;
+  color: #fff;
+  border: 1px solid var(--bg);
+  border-radius: 4px;
+  padding: 0.75em 2em;
+  background: var(--bg);
+  transition: 0.2s;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  margin-right: 20px;
+}
+.botones{
+  display: flex;
+  width: 50%;
+  
+}
+.grupo{
+    display: flex;
+    padding: 5px 5px;
+    gap: 10px;
+    width: 50%;
+}
+
+.button:hover {
+  color: #639;
+  background-color: white;
+  border: 1px dashed #639;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.button:active {
+  transform: translate(0);
+  box-shadow: none;
+}
+  
+  .input:focus {
+    border: 2px solid rgb(67, 0, 83);
+  }
+  
+  #file {
+    display: none;
+  }
+  .form-control{
+    border: 0.5px solid rgb(22, 22, 22);
+    outline: none;
+    width: 10%;
+    height: 41%;
+    padding: 10px 5px;
+    background-color: rgba(233, 231, 231, 0.26);
+    border-radius: 5px;
+    box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.015),100px 100px 80px rgba(0, 0, 0, 0.03);
+  } 
+  .form-control:focus{
+    border: 2px solid rgb(67, 0, 83);
+  }
+
+  button{
+    padding: 10px 1px;
+  }
+  .limpiar{
+    border: 1px;
+
+  }
+  .btn{
+    background-color: rgb(233, 231, 231);
+    padding: 10px 10px;
+    height: 44px;
+  }
+  .input2{
+    border: 0.5px solid rgb(22, 22, 22);
+    outline: none;
+    width: 50%;
+    padding: 10px 1px;
+    background-color: rgba(252, 250, 250, 0.274);
+    border-radius: 5px;
+    box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.015),100px 100px 80px rgba(0, 0, 0, 0.03);
+    display: flex;
+  }
+
+  .modal2{
+    width: fit-content;
+    height: fit-content;
+    background: #FFFFFF;
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 26px;
+    max-width: 450px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }  
+  .separator {
+    width: calc(100% - 20px);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    color: #8B8E98;
+    margin: 0 10px;
+  }
+  
+  .separator > p {
+    word-break: keep-all;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-size: 11px;
+    margin: auto;
+  }
+  
+  .separator .line {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: #e8e8e8;
+    margin: auto;
+  }
+  
+  .grupo2{
+    display: flex;
+  }
+  .grupo2 .form-control{
+    width: 50%;
+    height: 45px;
+  }
+  .grupo2 .input{
+    width: 20%;
+    height: 45%;
+    border-radius: 5px;
+  }
+  .grupo2 .input-group-text{
+    width: fit-content;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 1px 1px #fff;
+    
+  }
+
+
+
+  .signup {
+    color: rgb(77, 75, 75);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    font-weight: bold;
+    font-size: x-large;
+    margin-bottom: 0.5em;
+  }

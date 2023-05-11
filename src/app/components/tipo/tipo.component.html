@@ -1,0 +1,68 @@
+<app-nav></app-nav>
+<div class="todo">
+
+
+<form class="form">
+  
+  <h2 class="title">Tipo de vehiculo</h2>
+
+      <div class="input-group mb-3">
+        <input  id="idtipo" name="idtipo" [(ngModel)]="idtipo" (keyUp.enter)="buscaridtype(idtipo)" type="text" class="form-control" placeholder="id" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#modalTipos"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+
+      <input id="tipo" name="tipo" [(ngModel)]="tipo" type="text" class="input" placeholder=" tipo">
+
+      <button type="button"  class="button" (click)="limpiar()">Limpiar <i class="fas fa-broom"></i></button>
+      <button type="button"  routerLinkActive="router-link-active" (click)="guardarTipo()" class="button"><i class="far fa-save"></i> Guardar</button>
+      <button type="button"  class="button">Eliminar <i class="bi bi-trash3"></i></button>
+
+
+
+  </form>
+
+  
+  <div class="alert alert-success" role="alert" *ngIf="msgRegisTipo">
+    El tipo de vehiculo ha sido registrado con éxito!
+  </div>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modalTipos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Tipos de vehiculos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">tipo</th>              
+            </tr>
+          </thead>
+          <tbody >
+            <tr *ngFor="let item of listadoTipos">
+              <th scope="row">
+                <a [routerLink]="" data-dismiss="modal" (click)="selectTipo(item)">{{ item.idtipo }}</a>
+              </th>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectTipo(item)">{{ item.tipo }}</a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary p-2" data-dismiss="modal">Cancelar</button>        
+      </div>
+    </div>
+  </div>
+</div>
+

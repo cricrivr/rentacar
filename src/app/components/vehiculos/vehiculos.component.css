@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
+.col-md-8{
+   display: flex;
+   padding: 10px;
+}
+.titulo{
+    font-family: 'Bruno Ace', cursive;
+   margin-left: 100px;
+   margin-top: 10px;
+   padding: 25px;
+   font-size: 30px;
+}
+.logos{
+    display: inline-block;
+}
+.logos img{
+    width: 10%;
+    height: 10%;
+    padding: 1%;
+}
+.oferta{
+    margin-left: 25px;
+}
+.home{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cont h1{
+    font-size: 3rem;
+    letter-spacing: 2px;
+    
+}
+.car img{
+    width: 600px;
+    height: 100%;
+
+}
+
+
+

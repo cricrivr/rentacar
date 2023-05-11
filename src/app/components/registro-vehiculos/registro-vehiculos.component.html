@@ -1,0 +1,144 @@
+<app-nav></app-nav>
+
+<div class="todo">
+
+
+<form class="form">
+  <h2 class="title">Registrar vehiculo</h2>
+
+  <div class="input-group mb-3">
+    <input  id="vehiculoid" name="vehiculoid" [(ngModel)]="vehiculoid" (keyUp.enter)="buscaridvehiculo(vehiculoid)" type="text" class="form-control" placeholder="vehiculoid" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#modalVehiculos"><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+
+  <input id="marca" name="marca" [(ngModel)]="marca" class="form-control" type="text" class="input" placeholder="Marca">
+
+  <div class="dos">
+<input id="modelo" name="modelo" [(ngModel)]="modelo" class="form-control" type="text" class="input" placeholder="Modelo">
+<div class="form-row align-items-center">
+  <div class="col-auto my-1">
+    <select id="fecha" name="fecha" [(ngModel)]="fecha"  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+      <option selected disabled selected value= '0'>Año...</option>
+      <option *ngFor="let year of years" [value]=year>{{ year }}</option>
+    </select>
+  </div>
+</div>
+
+</div>
+
+<div class="form-row align-items-center">
+  <div class="col-auto my-1">
+    <select id="tipo" name="tipo" [(ngModel)]="idtipo"  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+      <option selected disabled selected value= '0'>Tipo...</option>
+      <option *ngFor="let item of listadoTipos" [value]=item.idtipo>{{ item.tipo }}</option>
+    </select>
+  </div>
+</div>
+
+<input id="color" name="color" [(ngModel)]="color" type="text" class="input" placeholder="Color">
+<input id="combustible" name="combustible" [(ngModel)]="combustible"  type="text" class="input" placeholder="Combustible">
+<input id="placa" name="placa" [(ngModel)]="placa" type="text" class="input" placeholder="placa">
+<input id="pasajeros" name="pasajeros" [(ngModel)]="pasajeros" class="input" type="text" placeholder="Pasajeros">
+<input id="precio" name="precio" [(ngModel)]="precio" class="input" type="text" placeholder="Precio por dia">
+<input id="estado" name="estado" [(ngModel)]="estado" type="text" class="input" placeholder="Estado">
+
+
+<div class="botones">
+<button type="button" (click)="limpiar()" class="button"> Limpiar <i class="fas fa-car"></i></button>
+<button type="button" (click)="guardar()" class="button"> Agregar <i class="fas fa-car"></i></button>
+</div>
+
+
+<div name="msgRegistrado" *ngIf="msgRegistrado" class="alert alert-success" role="alert">
+ El vehiculo se ha registrado con éxito!
+ </div>
+
+<div name="msgMarca" *ngIf="msgMarca" class="alert alert-danger" role="alert">
+ Debes ingresar una marca, intenta de nuevo!
+</div>
+
+<div name="msgModelo" *ngIf="msgModelo" class="alert alert-danger" role="alert">
+  Debes ingresar un modelo, intenta de nuevo!
+</div>
+
+<div  name="msgColor" *ngIf="msgColor" class="alert alert-danger" role="alert">
+Debes ingresar el color, intenta de nuevo!
+</div>
+
+<div name="msgPasajeros" *ngIf="msgPasajeros" class="alert alert-danger" role="alert">
+Debes ingresar su capacidad, intenta de nuevo!</div>
+
+<div name="msgTipo" *ngIf="msgTipo" class="alert alert-danger" role="alert">
+Debes ingresar el tipo, intenta de nuevo!
+</div>
+
+
+
+</form>
+
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-sm"  id="modalVehiculos" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Vehiculos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">marca</th>             
+              <th scope="col">modelo</th>             
+              <th scope="col">fecha</th>             
+              <th scope="col">tipo</th>             
+              <th scope="col">color</th>             
+              <th scope="col">combustible</th>             
+              <th scope="col">placa</th>             
+              <th scope="col">pasajeros</th>             
+              <th scope="col">Precio</th>             
+              <th scope="col">estado</th>             
+            </tr>
+          </thead>
+          <tbody >
+            <tr *ngFor="let item of listadoVehiculos">
+              <th scope="row">
+                <a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.vehiculoid }}</a>
+              </th>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.marca }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal" (click)="selectVehiculo(item)">{{ item.modelo }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal"(click)="selectVehiculo(item)">{{ item.fecha }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal"(click)="selectVehiculo(item)">{{ item.tipo }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal"(click)="selectVehiculo(item)">{{ item.color }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal"(click)="selectVehiculo(item)">{{ item.combustible }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal"(click)="selectVehiculo(item)">{{ item.placa }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal"(click)="selectVehiculo(item)">{{ item.pasajeros }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal"(click)="selectVehiculo(item)">{{ item.precio }}</a></td>
+              <td><a [routerLink]="" data-dismiss="modal"(click)="selectVehiculo(item)">{{ item.estado }}</a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary p-2" data-dismiss="modal">Cancelar</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<app-footer></app-footer>

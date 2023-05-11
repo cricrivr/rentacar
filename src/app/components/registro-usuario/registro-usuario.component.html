@@ -1,0 +1,89 @@
+<app-nav></app-nav>
+
+<div class="todo">
+<form class="form">
+  <h2 class="title">Registrate</h2>
+
+   <input id="file" type="file">
+
+      <div class="input-group mb-3">
+        <input  id="usrID" name="usrID" [(ngModel)]="usuarioID"  (keyup.enter)="obtenerUsuario(usuarioID)" type="text" class="form-control" placeholder="usuario" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#modalUsuarios"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+
+      <input id="usr" name="usr" [(ngModel)]="nombre" type="text" class="input" placeholder=" nombre">
+      <input id="password" name="password" [(ngModel)]="password" type="password" class="input" placeholder=" contraseña">
+      <input id="estado" name="estado" [(ngModel)]="estado" type="text" class="input" placeholder=" estado. Ex: 1 o 2"> 
+    <span class="sub">Ya tienes una cuenta? 
+      <a href="" [routerLink]="['/login']">Inicia sesion</a></span>
+
+
+      <div class="botones">
+      <button type="button"  (click)="limpiar()" class="button">Limpiar <i class="fas fa-broom"></i></button>
+      <button type="button"  class="button">Continuar <i class="fas fa-angle-double-right"></i></button> 
+      <button type="button"  class="button" (click)="eliminar(usuario)">Eliminar <i class="bi bi-trash3"></i></button>
+      <button type="button" (click)="guardarUsuario()"  routerLinkActive="router-link-active"  class="button"><i class="far fa-save"></i> Guardar</button>
+    </div>
+
+      <div class="alert alert-success" role="alert" *ngIf="msgRegistrado">
+        El usuario ha sido registrado con éxito!
+      </div>
+  </form>
+
+
+
+
+
+  <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="modalUsuarios" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Listado de usuarios</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Usuario</th>
+              <th scope="col">Nombre</th>              
+            </tr>
+          </thead>
+          <tbody >
+            <tr *ngFor="let item of listadoUsuario">
+              <th scope="row">
+                <a [routerLink]="" (click)="seleccionarUsuario(item)" data-dismiss="modal">{{ item.usuario }}</a>
+              </th>
+              <td><a [routerLink]="" (click)="seleccionarUsuario(item)" data-dismiss="modal">{{ item.nombre }}</a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary p-2" data-dismiss="modal">Cancelar</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+<app-footer></app-footer>

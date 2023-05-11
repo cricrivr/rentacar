@@ -1,0 +1,51 @@
+.form {
+    
+    margin-left: 33%;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-top: 10%;
+    border-radius: 20px;
+    padding: 20px 40px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 10px rgb(0, 0, 0);
+    transition: .2s linear;
+    text-align: center;
+    color: black;
+  }
+    
+button{
+    background-color: rgba(65, 105, 225, 0.938);
+    color: white;
+    padding: 5px 5px 5px;
+    border-radius: 10px;
+}
+.button:hover{
+    background-color: #41523c;;
+}
+.button1:hover{
+background-color: rgb(151, 12, 12);
+}
+#file-input {
+    width: 350px;
+    max-width: 100%;
+    color: #444;
+    padding: 2px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid rgba(8, 8, 8, 0.288);
+  }
+  #file-input::file-selector-button:hover {
+    background: #0d45a5;
+  }
+  #file-input::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }

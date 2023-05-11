@@ -1,0 +1,18 @@
+
+.back{
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color:rgb(7, 7, 7);
+    color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 1px black;
+}
+.back:hover{
+    filter: brightness(110%);
+    background-color: rgb(0, 0, 0);
+    box-shadow: 2px 2px 2px black;
+    color:rgb(255, 244, 244);
+
+}
+.navbar-nav a:hover{
+text-decoration: overline;
+}
