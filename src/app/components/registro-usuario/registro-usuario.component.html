@@ -36,6 +36,46 @@
 
 
 
+  <form class="form2">
+  <span class="signup">Rentacar CVR</span>
+
+  <span class="signup"> Registrate</span>
+
+  
+     <input id="file" type="file">
+  
+        <div class="input-group mb-3">
+          <input  id="usrID" name="usrID" [(ngModel)]="usuarioID"  (keyup.enter)="obtenerUsuario(usuarioID)" type="text" class="form-control" placeholder="usuario" aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#modalUsuarios"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+  
+        <input id="usr" name="usr" [(ngModel)]="nombre" type="text" class="input" placeholder=" nombre">
+        <input id="password" name="password" [(ngModel)]="password" type="password" class="input" placeholder=" contraseña">
+        <input id="estado" name="estado" [(ngModel)]="estado" type="text" class="input" placeholder=" estado. Ex: 1 o 2"> 
+      <span class="sub">Ya tienes una cuenta? 
+        <a href="" [routerLink]="['/login']">Inicia sesion</a></span>
+  
+  
+        <div class="botones">
+        <button type="button"  (click)="limpiar()" class="button">Limpiar</button>
+        <button type="button"  class="button">Continuar</button> 
+        <button type="button"  class="button" (click)="eliminar(usuario)">Eliminar</button>
+        <button type="button" (click)="guardarUsuario()"  routerLinkActive="router-link-active"  class="button">Guardar</button>
+      </div>
+  
+        <div class="alert alert-success" role="alert" *ngIf="msgRegistrado">
+          El usuario ha sido registrado con éxito!
+        </div>
+    </form>
+
+
+
+
+
+
+
   <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Launch demo modal
@@ -85,5 +125,3 @@
 
 
 
-
-<app-footer></app-footer>

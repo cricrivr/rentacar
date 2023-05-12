@@ -31,7 +31,7 @@ listadoAlquiler: Array<alquiler> = [];
 
 today = new Date();
 format = 'yyyy/MM/dd';
-myDate = '2019-06-29';
+//myDate = '2019-06-29';
 locale = 'en-US';
 formattedDate = formatDate(this.today, this.format, this.locale);
 
@@ -45,8 +45,19 @@ formattedDate = formatDate(this.today, this.format, this.locale);
   }
 
 
+  //calcular dias en total
   totalDias(){
-    this.dias; 
+    if(this.fechaIni && this.fechaFinal){
+       let inicio = new Date(this.fechaIni);
+      let final = new Date(this.fechaFinal);
+      let tiempo = Math.abs(final.getTime() - inicio.getTime());
+      this.dias = Math.ceil(tiempo / (1000 * 60 * 60 * 24));
+    }
+  }
+
+  //calcular monto total
+  monto(){
+    this.total = this.precio * this.dias;
   }
 
   //obtener todos los registros de vehiculos
@@ -56,6 +67,7 @@ formattedDate = formatDate(this.today, this.format, this.locale);
   
     })
   }
+
 
   guardar(){
     let objAlquiler:alquiler = new alquiler();
@@ -98,11 +110,12 @@ formattedDate = formatDate(this.today, this.format, this.locale);
     }
 
     //buscar vehiculo según se id
-buscaridalquiler(vehiculoid:number){
-  this.servicio.buscarAlquilerID(this.idalquiler).subscribe(resultado => {
+buscaridalquiler(idalquiler:number){
+  this.servicio.buscarAlquilerID(idalquiler).subscribe(resultado => {
    console.log(resultado);
  
-   if(resultado !== null){
+   if(resultado != null){
+    //this.idalquiler = resultado.idalquiler;
 
    }
    })

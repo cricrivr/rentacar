@@ -50,7 +50,7 @@ export class LoginComponent {
       this.hayErrores = true;
     } 
 
-    if ( this.password == '' ){ //si la contraseña esta vacia, msgPassword será verdadero
+    if ( this.password == '' ){
       this.msgPassword = true;
       this.hayErrores = true;
     }
@@ -92,15 +92,10 @@ export class LoginComponent {
             this.msgIncorrecto = false;   
           }, 3000);    //para que tarde mas tiempo en cargar y de tiempo de programar
         }
-
-        // if(retorno == false){
-        //   this.msgIncorrecto = true;
-        // }
     }); 
 
     
   
-    //console.log(this.usuario);
 
 
   }

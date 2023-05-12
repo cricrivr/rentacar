@@ -1,68 +1,3 @@
-.form {
-   margin: 0 auto;
-   margin-top: 15%;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    gap: 45px;
-    border-radius: 20px;
-    padding: 20px 40px;
-    background-color: rgb(41, 41, 41);
-    box-shadow: 2px 2px 10px rgb(0, 0, 0);
-    transition: .2s linear;
-    text-align: center;
-    color: white;
-  }
-  
-  .form button {
-    align-self: flex-end;
-    background-color: rgba(78, 119, 0, 0.76);
-
-  }
-  
-  .form:hover {
-
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
-  }
-  
-  .input {
-    height: 35px;
-    width: 100%;
-    border: 0.5px solid white;
-    background-color: transparent;
-    padding: 5px;
-    border-radius: 5px;
-    transition: .2s linear;
-    position: relative;
-    color: black;
-  }
-  
-  .input:focus {
-    outline: none;
-    background-color: rgba(81, 100, 116, 0.39);
-    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.137);
-  }
-  
-  button {
-    border: none;
-    padding: 4px 10px;
-    border-radius: 5px;
-    transition: .2s linear;
-    background-color:rgb(255, 255, 255);
-
-    
-
-}
-  
-  button:hover {
-    background-color: rgba(255, 255, 255, 0.74);
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.37);
-  }
-  .nomlog{
-    text-align: center;
-    color:cadetblue;
-  }
-  
 
   .alert alert-danger{
     height: 30px;
@@ -75,10 +10,89 @@
     background-size: cover;
     min-height: 100vh;
     position: relative;
-   
   }
+  .form2{
+    width: 79em;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2%;
+    border-radius: 20px;
+    padding: 20px 30px;
+    background-color: rgb(255, 255, 255);
+    transition: .2s linear;
+    text-align: center;
+    color: #000;
+    align-items: center;
+  }
+  .form2 img{
+    width: 20%;
+    height: auto;
+  }
+  .form2 .boton{
+    background-color: #000;
+    color: white;
+    width: 50%;
+    padding: 10px 10px;
+  }
+  .form2 .boton:hover{
+    color: #000;
+    background-color: white;
+    border: 1px dashed #000;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  .titulo {
+    color: rgb(77, 75, 75);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    font-weight: bold;
+    font-size: x-large;
+  }
+  .input2{
+    height: 45px;
+    width: 50%;
+    border: 1px solid #000;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .2s linear;
+    position: relative;
+    color: black;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  .input2:focus{
+    border: 2px solid gray;
 
-
+  }
+  .separator {
+    width: calc(100% - 20px);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    color: #8B8E98;
+    margin: 0 10px;
+  }
+  .separator .line {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: #e8e8e8;
+    margin: auto;
+  }
+  .separator > p {
+    word-break: keep-all;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-size: 11px;
+    margin: auto;
+  }
 
 
   

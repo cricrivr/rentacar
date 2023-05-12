@@ -19,7 +19,7 @@
 <input id="modelo" name="modelo" [(ngModel)]="modelo" class="form-control" type="text" class="input" placeholder="Modelo">
 <div class="form-row align-items-center">
   <div class="col-auto my-1">
-    <select id="fecha" name="fecha" [(ngModel)]="fecha"  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+    <select id="fecha" name="fecha" [(ngModel)]="fecha"  class="custom-select mr-sm-2"  id="inlineFormCustomSelect">
       <option selected disabled selected value= '0'>Año...</option>
       <option *ngFor="let year of years" [value]=year>{{ year }}</option>
     </select>
@@ -74,9 +74,68 @@ Debes ingresar su capacidad, intenta de nuevo!</div>
 Debes ingresar el tipo, intenta de nuevo!
 </div>
 
-
-
 </form>
+
+
+
+
+
+
+<form class="form2">
+  
+  <span class="signup">Rentacar CVR</span>
+  <span class="signup">Registra un vehiculo</span>
+
+
+  <div class="input-group mb-3">
+    <input  id="vehiculoid" name="vehiculoid" [(ngModel)]="vehiculoid" (keyUp.enter)="buscaridvehiculo(vehiculoid)" type="text" class="form-control" placeholder="vehiculoid" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#modalVehiculos"><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+
+  <input id="marca" name="marca" [(ngModel)]="marca" class="form-control" type="text" class="form--input" placeholder="Marca">
+
+  
+<input id="modelo" name="modelo" [(ngModel)]="modelo" class="form-control" type="text" class="form--input" placeholder="Modelo">
+
+<div class="form-row align-items-center">
+  <div class="col-auto my-1">
+    <select id="fecha" name="fecha" [(ngModel)]="fecha"  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+      <option selected disabled selected value= '0'>Año...</option>
+      <option *ngFor="let year of years" [value]=year>{{ year }}</option>
+    </select>
+  </div>
+</div>
+
+
+
+<div class="form-row align-items-center">
+  <div class="col-auto my-1">
+    <select id="tipo" name="tipo" [(ngModel)]="idtipo"  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+      <option selected disabled selected value= '0'>Tipo...</option>
+      <option *ngFor="let item of listadoTipos" [value]=item.idtipo>{{ item.tipo }}</option>
+    </select>
+  </div>
+</div>
+
+<input id="color" name="color" [(ngModel)]="color" type="text" class="form--input" placeholder="Color">
+<input id="combustible" name="combustible" [(ngModel)]="combustible"  type="text" class="form--input" placeholder="Combustible">
+<input id="placa" name="placa" [(ngModel)]="placa" type="text" class="form--input" placeholder="placa">
+<input id="pasajeros" name="pasajeros" [(ngModel)]="pasajeros" class="form--input" type="text" placeholder="Pasajeros">
+<input id="precio" name="precio" [(ngModel)]="precio" class="form--input" type="text" placeholder="Precio por dia">
+<input id="estado" name="estado" [(ngModel)]="estado" type="text" class="form--input" placeholder="Estado">
+
+
+<div class="botones">
+<button type="button" (click)="limpiar()" class="form--submit"> Limpiar</button>
+<button type="button" (click)="guardar()" class="form--submit"> Agregar</button>
+</div>
+  
+</form>
+
+
+
 
 
 
@@ -140,5 +199,3 @@ Debes ingresar el tipo, intenta de nuevo!
 
 
 
-
-<app-footer></app-footer>

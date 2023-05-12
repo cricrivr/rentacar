@@ -1,13 +1,21 @@
 
 <div class="todo">
 
-<form class="form">
+<form class="form2">
 
-    <h2 [ngClass]="{nomlog: false}">Login</h2>
+
+  <img src="/assets/6-removebg-preview.png">
+  <span class="titulo">Login</span>
+
 
     <p>Llena estos campos para ingresar</p>
 
-    <input name="usr" required class="input" type="text" placeholder="username" [(ngModel)]="this.usuario">
+    <div class="separator">
+        <hr class="line">
+        <p>Username</p>
+        <hr class="line">
+      </div>
+    <input name="usr" required class="input2" type="text" placeholder="username" [(ngModel)]="this.usuario">
 
     
 
@@ -15,13 +23,18 @@
         El usuario no puede estar en blanco 
      </div>
 
-    <input name="msgPassword" required class="input" type="password" placeholder="password"  [(ngModel)]="password" > 
+     <div class="separator">
+        <hr class="line">
+        <p>Password</p>
+        <hr class="line">
+      </div>
+    <input name="msgPassword" required class="input2" type="password" placeholder="password"  [(ngModel)]="password" > 
     
     <div *ngIf="msgPassword" class="alert alert-danger" role="alert">
         La contraseña no puede estar vacia
     </div>
 
-    <p>¿Aún no te has registrado?<a href="" [routerLink]="['/registrarse']" routerLinkActive="router-link-active" >Registrate</a></p>
+    <p>¿Aún no te has registrado? <a href="" [routerLink]="['/registrarse']" routerLinkActive="router-link-active" >Registrate</a></p>
 
   
     <div *ngIf="msgIncorrecto" class="alert alert-danger" role="alert">
@@ -29,15 +42,12 @@
     </div>
 
 
-
-
-    <!-- <button *ngIf="guardando == false" (click)="validarLogin()" type="submit">Acceder</button>
-    <button *ngIf="guardando == true" type="submit">Accediendo</button> -->
-
-    <button  (click)="validarLogin()" type="submit"> <i class="fas fa-sign-in-alt"></i>
+    <button  (click)="validarLogin()" type="submit" class="boton"> <i class="fas fa-sign-in-alt"></i>
         {{ letrero }}
     </button>    
 </form>
+
+
 
 </div>
 
